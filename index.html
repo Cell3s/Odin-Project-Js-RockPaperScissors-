@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class = "Computer"> Computer</button>
+    <button class="ReRoll"> ReRoll </button>
+    <button class="User"> User </button>
+</body>
 
+<script>
+
+    const ReRollButt = document.querySelector(".ReRoll");
+    const Computer = document.querySelector(".Computer");
+    const UserB = document.querySelector(".User");
+
+        let hand = Math.floor(Math.random()*100)+1;
+        let rock = "rock";
+        let paper = "paper";
+        let scissor = "scissor";
+        let user = null;
+        console.log(hand);
+    
+    function reRoll (){
+       hand = Math.floor(Math.random()*100)+1 
+       console.log(hand);
+    }
+
+    ReRollButt.addEventListener("click", reRoll);
+
+    function getComputerChoice() {
+        console.log(hand)
+        if (hand <= 33){
+            console.log(rock)
+        } else if (hand >= 66){
+            console.log (paper)
+        } else {
+            console.log (scissor)
+        }
+    };
+
+    Computer.addEventListener("click", getComputerChoice);
+
+    function getUserChoice() {
+        let UserChoice = prompt("Rock, Paper, or Scissor?")
+
+        while (UserChoice != "Rock" && UserChoice != "Paper" && UserChoice != "Scissor"){
+            UserChoice = prompt("That is not valid, Rock, Paper, or Scissor")
+        }
+
+        return UserChoice;
+    }
+
+     UserB.addEventListener("click", function(){
+        user = getUserChoice();
+        console.log(1);
+     });
+
+
+</script>
+</html>
