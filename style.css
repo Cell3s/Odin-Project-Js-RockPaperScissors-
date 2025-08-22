@@ -2,6 +2,7 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+
 }
 
 .Head{
@@ -25,6 +26,7 @@
     font-size: 24px;
 }
 
+
 .PlayButt{
     display: flex;
     align-items: center;
@@ -40,4 +42,22 @@
   border-radius: 15px;
 }
 
+#hScore {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color:darkmagenta;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#cScore {
+     display: flex;
+    justify-content: center;
+    align-self: center;
+    color:darkblue;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
 

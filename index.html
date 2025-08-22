@@ -9,18 +9,15 @@
 <body>
     <div  class ="Head"> Rock! Paper! Scissors! </div>
     <div class ="Play">Click to Play!</div>
+    <p id="hScore">Human Score: 0</p>
+    <p id ="cScore">Computer Score: 0</p>
     <div class = "PlayButt">  <button>Play</button> </div>
     <div>
-    <button class = "Computer"> Computer</button>
-    <button class="User"> User </button>
     </div>
 </body>
 
 <script>
 
-    const ReRollButt = document.querySelector(".ReRoll");
-    const Computer = document.querySelector(".Computer");
-    const UserB = document.querySelector(".User");
     const Play = document.querySelector(".PlayButt");
 
         let humanScore = 0;
@@ -31,7 +28,6 @@
         let scissor = "Scissors";
         let normalized
         let comChoise;
-        Computer.addEventListener("click", getComputerChoice);
 
     function getUserChoice() {
         let UserChoice = prompt("Rock, Paper, or Scissors?")
@@ -45,17 +41,12 @@
         return normalized;
     }
 
-     UserB.addEventListener("click", function(){
-        user = getUserChoice();
-     });
-
     function reRoll (){
        hand = Math.floor(Math.random()*100)+1;
     }
 
     function getComputerChoice() {
         reRoll();
-        console.log(hand);
 
         if (hand <= 33){
             comChoise = rock;
@@ -75,9 +66,29 @@
         console.log(normalized);
         console.log(comChoise)
 
-
-
-
+        if (comChoise == "Rock" && normalized == "Paper"){
+            alert("You win! Paper beats Rock!")
+            humanScore += 1
+        } else if (comChoise == "Paper" && normalized == "Rock"){
+            alert("You lose! Paper beats Rock!")
+            computerScore += 1;}
+        else if (comChoise == "Paper" && normalized == "Scissors"){
+            alert("You Win! Scissors beats Paper!") 
+            humanScore += 1;}
+        else if (comChoise == "Scissors" && normalized == "Paper"){
+            alert("You Lose! Scissors beats Paper!")
+            computerScore += 1;}
+        else if (comChoise == "Scissors" && normalized == "Rock"){
+           alert("You Win! Rock beats Scissors!")
+            humanScore += 1;}
+         else if (comChoise == "Rock" && normalized == "Scissors"){
+            alert("You Lose! Rock beats Scissors!")
+            computerScore += 1;}
+         else if (comChoise === normalized){
+            alert("Draw")} 
+            
+        document.getElementById("hScore").textContent = `Human Score: ${humanScore}`;
+        document.getElementById("cScore").textContent = `Computer Score: ${computerScore}`;
     }
 
     Play.addEventListener("click", playRound);
@@ -86,9 +97,6 @@
         console.log(user);
         console.log(comChoise)
     }
-
-
-
 
 </script>
 </html>
