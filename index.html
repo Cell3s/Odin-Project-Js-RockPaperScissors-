@@ -11,7 +11,8 @@
     <div class ="Play">Click to Play!</div>
     <p id="hScore">Human Score: 0</p>
     <p id ="cScore">Computer Score: 0</p>
-    <div class = "PlayButt">  <button>Play</button> </div>
+    <div class = "PlayButt">  <button>Play Game</button> </div>
+    <div class = "RoundButt">  <button>Play Round</button> </div>
     <div>
     </div>
 </body>
@@ -19,6 +20,7 @@
 <script>
 
     const Play = document.querySelector(".PlayButt");
+    const Round = document.querySelector(".RoundButt");
 
         let humanScore = 0;
         let computerScore = 0;
@@ -60,7 +62,7 @@
         }
     };
 
-    function playRound() {
+    function playGame() {
         getUserChoice()
         getComputerChoice()
         console.log(normalized);
@@ -91,7 +93,17 @@
         document.getElementById("cScore").textContent = `Computer Score: ${computerScore}`;
     }
 
-    Play.addEventListener("click", playRound);
+    Play.addEventListener("click", playGame);
+
+    function playRound(){
+        playGame();
+        playGame();
+        playGame();
+        playGame();
+        playGame();
+    }
+
+    Round.addEventListener("click", playRound);
 
     function checkUser(){
         console.log(user);

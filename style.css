@@ -34,7 +34,23 @@
 
 }
 
+.RoundButt{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
 .PlayButt button{
+  font-size: 42px;
+  padding: 0px 20px 0px 20px;
+  background: #22C1C3;
+  background: linear-gradient(0deg,rgba(34, 193, 195, 0.59) 0%, rgba(253, 187, 45, 1) 100%);
+  border-radius: 15px;
+}
+
+.RoundButt button{
   font-size: 42px;
   padding: 0px 20px 0px 20px;
   background: #22C1C3;
